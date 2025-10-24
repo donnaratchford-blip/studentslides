@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friday Lesson Pacing Guide - October 24, 2025</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f0f0f0;
+            overflow: hidden;
+        }
+        
+        .slide-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        
+        .slide {
+            display: none;
+            width: 90vw;
+            height: 90vh;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            padding: 60px;
+            position: relative;
+        }
+        
+        .slide.active {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .slide-number {
+            position: absolute;
+            bottom: 20px;
+            right: 30px;
+            font-size: 18px;
+            color: #666;
+        }
+        
+        .time-badge {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            background: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .title-slide {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .title-slide h1 {
+            font-size: 72px;
+            margin-bottom: 20px;
+        }
+        
+        .title-slide h2 {
+            font-size: 36px;
+            font-weight: 300;
+        }
+        
+        .section-slide {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .section-slide h1 {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+        
+        .section-slide h2 {
+            font-size: 32px;
+            font-weight: 300;
+        }
+        
+        h1 {
+            font-size: 48px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            font-size: 36px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        
+        h3 {
+            font-size: 28px;
+            color: #667eea;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        .objective {
+            background: #e3f2fd;
+            border-left: 5px solid #2196F3;
+            padding: 20px;
+            margin: 20px 0;
+            font-size: 24px;
+            line-height: 1.6;
+        }
+        
+        .objective strong {
+            color: #1976D2;
+        }
+        
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        li {
+            font-size: 26px;
+            line-height: 2;
+            padding-left: 40px;
+            position: relative;
+            margin-bottom: 10px;
+        }
+        
+        li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4CAF50;
+            font-weight: bold;
+            font-size: 30px;
+        }
+        
+        .step-number {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+        
+        .materials {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            margin: 20px 0;
+            font-size: 22px;
+        }
+        
+        .materials strong {
+            color: #ff6f00;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+        
+        .teacher-moves {
+            background: #d1ecf1;
+            border-left: 5px solid #17a2b8;
+            padding: 20px;
+            margin: 15px 0;
+            font-size: 22px;
+        }
+        
+        .navigation {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            z-index: 1000;
+        }
+        
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        button:hover {
+            background: #5568d3;
+        }
+        
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        
+        .agenda-item {
+            background: #f8f9fa;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 5px solid #667eea;
+            font-size: 22px;
+        }
+        
+        .agenda-time {
+            font-weight: bold;
+            color: #667eea;
+            display: inline-block;
+            min-width: 150px;
+        }
+        
+        .closure-box {
+            background: #e8f5e9;
+            border: 3px solid #4CAF50;
+            padding: 25px;
+            margin-top: 20px;
+            border-radius: 10px;
+            font-size: 24px;
+        }
+        
+        .closure-box strong {
+            color: #2e7d32;
+            font-size: 28px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <!-- SLIDE 1: Title -->
+        <div class="slide active title-slide">
+            <h1>Friday, October 24, 2025</h1>
+            <h2>Lesson Pacing Guide</h2>
+            <p style="margin-top: 40px; font-size: 24px;">Third Grade - Week 1 Catch-Up</p>
+        </div>
+
+        <!-- SLIDE 2: Daily Agenda -->
+        <div class="slide">
+            <h1>Today's Schedule</h1>
+            <div class="agenda-item">
+                <span class="agenda-time">8:00-8:15</span> Morning Work (Independent)
+            </div>
+            <div class="agenda-item">
+                <span class="agenda-time">8:15-9:00</span> iReady (45 min)
+            </div>
+            <div class="agenda-item">
+                <span class="agenda-time">9:00-11:20</span> ELA Block (140 min)
+            </div>
+            <div class="agenda-item">
+                <span class="agenda-time">11:25-12:35</span> Recess & Lunch
+            </div>
+            <div class="agenda-item">
+                <span class="agenda-time">12:40-2:50</span> Math/Science/Social Studies (130 min)
+            </div>
+            <div class="slide-number">2</div>
+        </div>
+
+        <!-- SLIDE 3: Morning Work -->
+        <div class="slide">
+            <div class="time-badge">8:00-8:15 (15 min)</div>
+            <h1>Morning Work</h1>
+            <div class="objective">
+                <strong>Purpose:</strong> Students arrive at different times - provide independent work
+            </div>
+            <h3>Options for Students:</h3>
+            <ul>
+                <li>Review vocabulary words (dreadful, unusual, impossible, firmly, bob, notify)</li>
+                <li>Read independently from book box</li>
+                <li>Complete any unfinished work from the week</li>
+                <li>Practice writing silent letter words in journal</li>
+            </ul>
+            <div class="teacher-moves">
+                <strong>Teacher Moves:</strong> Greet students, take attendance, handle morning tasks, check homework
+            </div>
+            <div class="slide-number">3</div>
+        </div>
+
+        <!-- SLIDE 4: iReady -->
+        <div class="slide">
+            <div class="time-badge">8:15-9:00 (45 min)</div>
+            <h1>iReady</h1>
+            <div class="objective">
+                <strong>Students complete iReady lessons independently</strong>
+            </div>
+            <h3>Teacher Moves:</h3>
+            <ul>
+                <li>Monitor student progress</li>
+                <li>Support students who need help logging in</li>
+                <li>Prepare materials for ELA block</li>
+                <li>Set up anchor charts for vocabulary</li>
+            </ul>
+            <div class="slide-number">4</div>
+        </div>
+
+        <!-- SLIDE 5: ELA Section Divider -->
+        <div class="slide section-slide">
+            <h1>ELA BLOCK</h1>
+            <h2>9:00-11:20 (140 minutes)</h2>
+            <p style="margin-top: 30px; font-size: 28px;">Vocabulary → Reading → Writing → Small Groups</p>
+            <div class="slide-number">5</div>
+        </div>
+
+        <!-- SLIDE 6: Vocabulary ABC Sort -->
+        <div class="slide">
+            <div class="time-badge">9:00-9:10 (10 min)</div>
+            <h1>Vocabulary: ABC Sort</h1>
+            <div class="objective">
+                <strong>Standard:</strong> 3.RL.KID.1, 3.RL.KID.2<br>
+                <strong>I Can:</strong> I can alphabetize vocabulary words and use them correctly.
+            </div>
+            <h3>Vocabulary Words:</h3>
+            <ul>
+                <li>dreadful</li>
+                <li>unusual</li>
+                <li>impossible</li>
+                <li>firmly</li>
+                <li>bob</li>
+                <li>notify</li>
+            </ul>
+            <div class="slide-number">6</div>
+        </div>
+
+        <!-- SLIDE 7: ABC Sort Steps -->
+        <div class="slide">
+            <div class="time-badge">9:00-9:10 (10 min)</div>
+            <h1>Vocabulary: ABC Sort - Steps</h1>
+            <h3><span class="step-number">1</span> I Do (3 min)</h3>
+            <div class="teacher-moves">
+                Display words on board. Model: "To alphabetize, I look at the first letter. 'Bob' starts with B, 'dreadful' starts with D..." Show ordering process.
+            </div>
+            <h3><span class="step-number">2</span> We Do (3 min)</h3>
+            <div class="teacher-moves">
+                Together alphabetize 2-3 words. "What comes first: 'firmly' or 'impossible'?" Guide students through reasoning.
+            </div>
+            <h3><span class="step-number">3</span> You Do (4 min)</h3>
+            <div class="teacher-moves">
+                Students complete ABC sort independently in notebooks or worksheet. Circulate and check.
+            </div>
+            <div class="slide-number">7</div>
+        </div>
+
+        <!-- SLIDE 8: Reading Comprehension -->
+        <div class="slide">
+            <div class="time-badge">9:10-9:30 (20 min)</div>
+            <h1>Reading Comprehension Review</h1>
+            <div class="objective">
+                <strong>Standard:</strong> 3.RL.KID.2<br>
+                <strong>I Can:</strong> I can recount Princess Hyacinth and identify the lesson.
+            </div>
+            <h3>Focus:</h3>
+            <ul>
+                <li>Recount story: Beginning, Middle, End</li>
+                <li>Identify fairy tale elements</li>
+                <li>Discuss Problem/Solution/Lesson</li>
+            </ul>
+            <div class="materials">
+                <strong>Materials Needed:</strong> Princess Hyacinth book, fairy tale anchor chart, Problem/Solution chart
+            </div>
+            <div class="slide-number">8</div>
+        </div>
+
+        <!-- SLIDE 9: Recount Princess Hyacinth -->
+        <div class="slide">
+            <div class="time-badge">9:10-9:17 (7 min)</div>
+            <h1>Recount: Princess Hyacinth</h1>
+            <h3><span class="step-number">1</span> Turn and Talk (2 min)</h3>
+            <div class="teacher-moves">
+                "Turn to your partner and retell Princess Hyacinth. What happened at the beginning? Middle? End?"
+            </div>
+            <h3><span class="step-number">2</span> Whole Class Share (5 min)</h3>
+            <div class="teacher-moves">
+                <strong>Beginning:</strong> Princess Hyacinth floats, feels embarrassed<br>
+                <strong>Middle:</strong> Parents try to fix her with weights and heavy clothes<br>
+                <strong>End:</strong> She accepts herself and sees floating as a gift
+            </div>
+            <div class="slide-number">9</div>
+        </div>
+
+        <!-- SLIDE 10: Fairy Tale Elements -->
+        <div class="slide">
+            <div class="time-badge">9:17-9:25 (8 min)</div>
+            <h1>Fairy Tale Elements & Lesson</h1>
+            <h3>Identify Elements Together:</h3>
+            <ul>
+                <li>Once upon a time opening ✓</li>
+                <li>Royalty (Princess) ✓</li>
+                <li>Magic (floating) ✓</li>
+                <li>Problem (can't stop floating, embarrassed) ✓</li>
+                <li>Happy ending (accepts herself) ✓</li>
+            </ul>
+            <div class="closure-box">
+                <strong>The Lesson:</strong> Being different is okay. We should accept ourselves for who we are!
+            </div>
+            <div class="slide-number">10</div>
+        </div>
+
+        <!-- SLIDE 11: Problem/Solution Discussion -->
+        <div class="slide">
+            <div class="time-badge">9:25-9:30 (5 min)</div>
+            <h1>Problem & Solution</h1>
+            <h3>Complete Chart Together:</h3>
+            <div class="teacher-moves">
+                <strong>Problem:</strong> Princess Hyacinth floats uncontrollably; feels embarrassed and different<br><br>
+                <strong>Attempts to Solve:</strong> Parents try weights, heavy clothes - nothing works<br><br>
+                <strong>Solution:</strong> She learns to accept herself and finds joy in her unique ability<br><br>
+                <strong>Lesson/Happy Ending:</strong> Being different is okay; self-acceptance brings happiness
+            </div>
+            <div class="slide-number">11</div>
+        </div>
+
+        <!-- SLIDE 12: ELA Writing Block Overview -->
+        <div class="slide">
+            <div class="time-badge">9:30-10:30 (60 min)</div>
+            <h1>Writing & Frindle Block</h1>
+            <div class="objective">
+                <strong>Standards:</strong> 3.W.TTP.3a, 3.RL.KID.1, 3.RL.KID.2<br>
+                <strong>I Can:</strong> I can brainstorm ideas for a personal narrative AND analyze characters in Frindle.
+            </div>
+            <h3>Two Parts Today:</h3>
+            <ul>
+                <li>Part 1: Personal Narrative Brainstorming (20 min)</li>
+                <li>Part 2: Frindle Fridays - Week 1 (40 min)</li>
+            </ul>
+            <div class="slide-number">12</div>
+        </div>
+
+        <!-- SLIDE 13: Connect to Princess Hyacinth -->
+        <div class="slide">
+            <div class="time-badge">9:30-9:35 (5 min)</div>
+            <h1>Personal Narrative: Connect to Text</h1>
+            <div class="teacher-moves">
+                <strong>Teacher Says:</strong><br>
+                "Princess Hyacinth had a PROBLEM - she floated and felt different. She learned an important LESSON about accepting herself."<br><br>
+                "Today, you'll brainstorm ideas for writing about a time YOU had a problem, felt different, or learned an important lesson."
+            </div>
+            <h3>Prompt on Board:</h3>
+            <div class="objective">
+                Think about a time when you felt different or unusual, OR a time when you learned an important lesson about yourself.
+            </div>
+            <div class="slide-number">13</div>
+        </div>
+
+        <!-- SLIDE 14: Model Brainstorming -->
+        <div class="slide">
+            <div class="time-badge">9:35-9:40 (5 min)</div>
+            <h1>I Do: Model Brainstorming</h1>
+            <div class="teacher-moves">
+                <strong>Create web on chart paper:</strong><br><br>
+                Center: "My Personal Experiences"<br><br>
+                <strong>Idea 1:</strong> "I couldn't swim - felt left out at pool"<br>
+                <strong>Idea 2:</strong> "First day teaching - I was nervous"<br>
+                <strong>Idea 3:</strong> "Learned to ride a bike late - felt embarrassed"<br><br>
+                <strong>Think aloud:</strong> "I'm thinking of times I felt different or learned something about myself, just like Princess Hyacinth's journey."
+            </div>
+            <div class="slide-number">14</div>
+        </div>
+
+        <!-- SLIDE 15: Students Brainstorm -->
+        <div class="slide">
+            <div class="time-badge">9:40-9:50 (10 min)</div>
+            <h1>You Do: Brainstorm Your Topics</h1>
+            <h3>Students Create Web with 2-3 Ideas:</h3>
+            <div class="teacher-moves">
+                <strong>Prompt Questions on Board:</strong><br>
+                • When did you feel different from others?<br>
+                • When did you learn something important about yourself?<br>
+                • When did you face a challenge or problem?<br>
+                • When did you feel embarrassed or nervous?<br>
+                • When did you learn to accept something about yourself?<br><br>
+                <strong>Teacher Circulates:</strong> Conference with students who need help. Ask probing questions. Provide sentence starters if needed.
+            </div>
+            <div class="closure-box">
+                <strong>Save these webs!</strong> We'll use them next week to start drafting our narratives.
+            </div>
+            <div class="slide-number">15</div>
+        </div>
+
+        <!-- SLIDE 16: Frindle Fridays Intro -->
+        <div class="slide">
+            <div class="time-badge">9:50-10:30 (40 min)</div>
+            <h1>📚 Frindle Fridays - Week 1</h1>
+            <div class="objective">
+                <strong>I Can:</strong> I can analyze character traits and identify problem/solution in Frindle Chapters 1-3.
+            </div>
+            <h3>Focus Skills:</h3>
+            <ul>
+                <li>Character traits with text evidence</li>
+                <li>Problem/Solution</li>
+                <li>Vocabulary in context</li>
+            </ul>
+            <div class="materials">
+                <strong>Materials:</strong> Frindle books, anchor chart paper, vocabulary cards, journal prompts, picture cards for differentiation
+            </div>
+            <div class="slide-number">16</div>
+        </div>
+
+        <!-- SLIDE 17: Warm-Up Character Chart -->
+        <div class="slide">
+            <div class="time-badge">9:50-9:58 (8 min)</div>
+            <h1>Warm-Up: "Who is Nick?"</h1>
+            <h3>Create Mini Anchor Chart Together:</h3>
+            <div class="teacher-moves">
+                <strong>Review Chapters 1-2</strong> (students read at home)<br><br>
+                "Let's list 3 character traits for Nick Allen with evidence from the text."<br><br>
+                <strong>Model First Trait:</strong><br>
+                Trait: Creative<br>
+                Evidence: "He turned his classroom into a tropical island" (Ch 1)<br><br>
+                <strong>Class suggests 2 more traits with evidence:</strong><br>
+                Examples: clever, curious, mischievous, imaginative
+            </div>
+            <div class="materials">
+                <strong>Differentiation:</strong> Provide sentence starters & picture cards showing character traits for struggling readers
+            </div>
+            <div class="slide-number">17</div>
+        </div>
+
+        <!-- SLIDE 18: Vocabulary -->
+        <div class="slide">
+            <div class="time-badge">9:58-10:06 (8 min)</div>
+            <h1>Vocabulary: Quick Sketches</h1>
+            <h3>Three Focus Words:</h3>
+            <div class="teacher-moves">
+                <strong>1. acquire</strong> - to get or gain something<br>
+                Example from text: "Nick acquired a reputation for being clever"<br>
+                Quick sketch: Draw someone getting/receiving something<br><br>
+                <strong>2. essential</strong> - absolutely necessary, very important<br>
+                Example: "Water is essential for life"<br>
+                Quick sketch: Draw something you can't live without<br><br>
+                <strong>3. frantically</strong> - in a hurried, wild way<br>
+                Example from text: "Students frantically searched for answers"<br>
+                Quick sketch: Draw someone rushing/panicking
+            </div>
+            <h3>Students: Draw all 3 in notebooks with labels (5 min)</h3>
+            <div class="slide-number">18</div>
+        </div>
+
+        <!-- SLIDE 19: Read Chapter 3 Together -->
+        <div class="slide">
+            <div class="time-badge">10:06-10:18 (12 min)</div>
+            <h1>Read Aloud: Chapter 3</h1>
+            <div class="teacher-moves">
+                <strong>Teacher reads Chapter 3 aloud</strong><br><br>
+                <strong>Pause to discuss:</strong><br>
+                • What is Nick's plan?<br>
+                • How does Mrs. Granger react?<br>
+                • What problem is starting to develop?<br><br>
+                <strong>Track character traits:</strong><br>
+                "What does this chapter show us about Nick's character?"<br><br>
+                Add sticky notes to anchor chart as new traits emerge
+            </div>
+            <div class="slide-number">19</div>
+        </div>
+
+        <!-- SLIDE 20: Discussion -->
+        <div class="slide">
+            <div class="time-badge">10:18-10:25 (7 min)</div>
+            <h1>Discussion: Words Have Power</h1>
+            <h3>Essential Question:</h3>
+            <div class="objective">
+                How do words cause problems or solve them?
+            </div>
+            <div class="teacher-moves">
+                <strong>Turn and Talk:</strong> (2 min)<br>
+                "How are words powerful in Frindle so far?"<br><br>
+                <strong>Whole Class Share:</strong> (5 min)<br><br>
+                <strong>Guide questions:</strong><br>
+                • What problem has Nick's word created?<br>
+                • How might words solve or make the problem worse?
+            </div>
+            <div class="slide-number">20</div>
+        </div>
+
+        <!-- SLIDE 21: Journal Prompt -->
+        <div class="slide">
+            <div class="time-badge">10:25-10:30 (5 min)</div>
+            <h1>Journal Prompt - START</h1>
+            <div class="objective">
+                <strong>Prompt:</strong> "If you could change a classroom rule, what would it be and why?"
+            </div>
+            <div class="teacher-moves">
+                <strong>Connect to Nick's story:</strong><br>
+                "Nick questioned why a pen is called a pen. Today you'll think about rules and whether they should change."<br><br>
+                <strong>Read prompt together and begin writing</strong><br><br>
+                Students will finish during small group time (must-do)
+            </div>
+            <div class="materials">
+                <strong>Sentence Starters (for differentiation):</strong><br>
+                • "I would change the rule about _____ because _____."<br>
+                • "One rule that should be different is _____."
+            </div>
+            <div class="slide-number">21</div>
+        </div>
+
+        <!-- SLIDE 22: Small Groups Overview -->
+        <div class="slide">
+            <div class="time-badge">10:30-11:20 (50 min)</div>
+            <h1>Small Groups + Independent Work</h1>
+            <h3>Teacher: Pull 2-3 Guided Reading Groups (15-20 min each)</h3>
+            <div class="materials">
+                <strong>All Other Students - Must-Do Activities:</strong><br><br>
+                <strong>Must-Do #1:</strong> Finish Frindle journal prompt (5-7 sentences with reasons)<br><br>
+                <strong>Must-Do #2:</strong> Independent Reading (just-right books, 15+ min)<br><br>
+                <strong>If Finished Early:</strong> Vocabulary Word Map - Choose one word from Princess Hyacinth OR Frindle (acquire, essential, frantically, dreadful, unusual, impossible). Draw picture, write definition, write sentence, list synonyms.
+            </div>
+            <div class="closure-box">
+                <strong>Save brainstorming webs!</strong> We'll use them next week to draft personal narratives.
+            </div>
+            <div class="slide-number">22</div>
+        </div>
+
+        <!-- SLIDE 20: Lunch/Recess -->
+        <div class="slide section-slide">
+            <h1>LUNCH & RECESS</h1>
+            <h2>11:20-12:40</h2>
+            <p style="margin-top: 30px; font-size: 24px;">80 minutes</p>
+            <div class="slide-number">20</div>
+        </div>
+
+        <!-- SLIDE 21: Afternoon Block -->
+        <div class="slide section-slide">
+            <h1>MATH/SCIENCE/SOCIAL STUDIES</h1>
+            <h2>12:40-2:50 (130 minutes)</h2>
+            <p style="margin-top: 30px; font-size: 28px;">Math → Science → Social Studies</p>
+            <div class="slide-number">21</div>
+        </div>
+
+        <!-- SLIDE 22: Math Lesson 3 Intro -->
+        <div class="slide">
+            <div class="time-badge">12:40-1:30 (50 min)</div>
+            <h1>Math Lesson 3: Word Problems</h1>
+            <div class="objective">
+                <strong>Standard:</strong> 3.MD.A.2<br>
+                <strong>I Can:</strong> I can use drawings and strategies to solve one-step word problems involving weight.
+            </div>
+            <h3>Key Skills:</h3>
+            <ul>
+                <li>Draw tape diagrams for word problems</li>
+                <li>Solve addition, subtraction, multiplication, division problems</li>
+                <li>Use grams and kilograms correctly</li>
+            </ul>
+            <div class="materials">
+                <strong>Materials:</strong> Digital scale, classroom objects (stapler, markers, crayons), chart paper, student workbooks
+            </div>
+            <div class="slide-number">22</div>
+        </div>
+
+        <!-- SLIDE 23: Math Do Now -->
+        <div class="slide">
+            <div class="time-badge">12:40-12:45 (5 min)</div>
+            <h1>Math: Do Now/Fluency</h1>
+            <h3>Whiteboard Exchange:</h3>
+            <div class="teacher-moves">
+                <strong>Decomposing Metric Units</strong><br><br>
+                Display number bond: 1 kg = 500g + ?<br>
+                Students write unknown: 500g<br><br>
+                Continue with:<br>
+                • 700g + 300g = 1 kg<br>
+                • 400g + 600g = 1 kg<br>
+                • 450g + 550g = 1 kg<br>
+                • 750g + 250g = 1 kg
+            </div>
+            <div class="slide-number">23</div>
+        </div>
+
+        <!-- SLIDE 24: Math Launch -->
+        <div class="slide">
+            <div class="time-badge">12:45-12:50 (5 min)</div>
+            <h1>Math Launch: Which One Doesn't Belong?</h1>
+            <div class="teacher-moves">
+                <strong>Display 4 scales with different objects</strong><br><br>
+                Give 1 minute: "Find a category where 3 belong but 1 doesn't"<br><br>
+                <strong>Discuss:</strong><br>
+                • Number of objects on scale<br>
+                • Combined weights<br>
+                • Operations used (addition, subtraction, multiplication, division)
+            </div>
+            <div class="slide-number">24</div>
+        </div>
+
+        <!-- SLIDE 25: Addition Problem -->
+        <div class="slide">
+            <div class="time-badge">12:50-1:00 (10 min)</div>
+            <h1>I Do: Addition Problem</h1>
+            <div class="teacher-moves">
+                <strong>Display & Weigh:</strong> Stapler (147g) and markers (588g)<br><br>
+                <strong>Model Read-Draw-Write:</strong><br>
+                <span class="step-number">1</span> READ: "Stapler weighs 147g. Markers weigh 588g. What's the total weight?"<br><br>
+                <span class="step-number">2</span> DRAW: 2-part tape diagram. Label first part 147g, second part 588g. Add ? and arms for total.<br><br>
+                <span class="step-number">3</span> WRITE: "Which operation?" (addition - finding total)<br>
+                Equation: 147 + 588 = 735<br><br>
+                <span class="step-number">4</span> SOLVE: Model arrow way or other strategy
+            </div>
+            <div class="slide-number">25</div>
+        </div>
+
+        <!-- SLIDE 26: Subtraction Problem -->
+        <div class="slide">
+            <div class="time-badge">1:00-1:08 (8 min)</div>
+            <h1>I Do: Subtraction Problem</h1>
+            <div class="teacher-moves">
+                <strong>Problem:</strong> "Container of crayons weighed 463g this morning. Miss Diaz borrowed some. Now weighs 299g. How much did she borrow?"<br><br>
+                <strong>Model tape diagram:</strong><br>
+                • Draw tape, label whole as 463g<br>
+                • Partition tape - point slowly, students say "stop" at about 299g<br>
+                • Label known part 299g, unknown part with ?<br><br>
+                <strong>Equation:</strong> 463 - 299 = 164<br>
+                <strong>Strategy:</strong> Counting on: 299 + 1 = 300, + 100 = 400, + 63 = 463<br>
+                So 1 + 100 + 63 = 164
+            </div>
+            <div class="slide-number">26</div>
+        </div>
+
+        <!-- SLIDE 27: Multiplication Problem -->
+        <div class="slide">
+            <div class="time-badge">1:08-1:15 (7 min)</div>
+            <h1>We Do: Multiplication Problem</h1>
+            <div class="teacher-moves">
+                <strong>Read Together:</strong> "Adam buys 3 bags of ice. Each weighs 5 kg. How many kg in all?"<br><br>
+                <strong>Work with Partner:</strong> Draw tape diagram and solve<br><br>
+                <strong>Share Solutions:</strong><br>
+                • Tape diagram: 3 equal parts, each labeled 5 kg<br>
+                • Equation: 3 × 5 = 15<br>
+                • Strategies: skip-counting by 5s, repeated addition, multiplication fact<br><br>
+                <strong>Solution Statement:</strong> "Adam's bags weigh 15 kg in all."
+            </div>
+            <div class="slide-number">27</div>
+        </div>
+
+        <!-- SLIDE 28: Division Problem -->
+        <div class="slide">
+            <div class="time-badge">1:15-1:22 (7 min)</div>
+            <h1>We Do: Division Problem</h1>
+            <div class="teacher-moves">
+                <strong>Read Together:</strong> "Mrs. Smith put 5 copies of the same book on a scale. Books weigh 15 kg. How much does each weigh?"<br><br>
+                <strong>Draw with Partner:</strong><br>
+                • 5 equal parts<br>
+                • Whole = 15 kg<br>
+                • Each part = ?<br><br>
+                <strong>Equation:</strong> 15 ÷ 5 = 3<br>
+                <strong>Strategies:</strong> Skip-counting, division facts, repeated subtraction<br><br>
+                <strong>Solution Statement:</strong> "Each book weighs 3 kg."
+            </div>
+            <div class="slide-number">28</div>
+        </div>
+
+        <!-- SLIDE 29: Independent Practice -->
+        <div class="slide">
+            <div class="time-badge">1:22-1:30 (8 min)</div>
+            <h1>You Do: Independent Practice</h1>
+            <h3>Complete Problem Set #1-3</h3>
+            <div class="teacher-moves">
+                <strong>Students work independently or with partners</strong><br><br>
+                Problems include addition, subtraction, multiplication, and division with weight<br><br>
+                <strong>Teacher circulates:</strong> Check tape diagrams, equations, and solution statements
+            </div>
+            <div class="closure-box">
+                <strong>Key Question:</strong> "How do tape diagrams help you know which operation to use?"
+            </div>
+            <div class="slide-number">29</div>
+        </div>
+
+        <!-- SLIDE 30: Science Intro -->
+        <div class="slide">
+            <div class="time-badge">1:30-2:10 (40 min)</div>
+            <h1>Science: The Water Cycle</h1>
+            <div class="objective">
+                <strong>Standard:</strong> 3.ESS.2.1<br>
+                <strong>I Can:</strong> I can explain the movement of water through the water cycle using evidence and models.
+            </div>
+            <h3>Essential Questions:</h3>
+            <ul>
+                <li>What happens to water as it moves through the water cycle?</li>
+                <li>How do the Sun and gravity drive the cycle?</li>
+                <li>Why is the water cycle important to life on Earth?</li>
+            </ul>
+            <div class="slide-number">30</div>
+        </div>
+
+        <!-- SLIDE 31: Water Cycle Bag Model -->
+        <div class="slide">
+            <div class="time-badge">1:30-1:45 (15 min)</div>
+            <h1>Water Cycle Bag Model</h1>
+            <h3><span class="step-number">1</span> Engage (3 min)</h3>
+            <div class="teacher-moves">
+                Ask: "Where does rain come from?" Record student ideas on chart paper.
+            </div>
+            <h3><span class="step-number">2</span> Explore: Set Up Bags (10 min)</h3>
+            <div class="teacher-moves">
+                <strong>Model:</strong> Draw sun and clouds on bag with marker<br>
+                Add 1/4 cup water to bottom of bag<br>
+                Seal bag, tape to sunny window<br><br>
+                <strong>Students:</strong> Create their own bags, label with name
+            </div>
+            <h3><span class="step-number">3</span> Predict (2 min)</h3>
+            <div class="teacher-moves">
+                "I think ___ will happen because ___"
+            </div>
+            <div class="slide-number">31</div>
+        </div>
+
+        <!-- SLIDE 32: Bill Nye Video -->
+        <div class="slide">
+            <div class="time-badge">1:45-1:55 (10 min)</div>
+            <h1>Bill Nye: The Water Cycle</h1>
+            <div class="teacher-moves">
+                <strong>Before Watching:</strong><br>
+                "As you watch, listen for these vocabulary words: evaporation, condensation, precipitation, collection"<br><br>
+                <strong>During Video:</strong><br>
+                Pause at key moments to discuss:<br>
+                • What is evaporation?<br>
+                • What is condensation?<br>
+                • What is precipitation?<br>
+                • What is collection?
+            </div>
+            <div class="materials">
+                <strong>Materials:</strong> Projector, Bill Nye video queued up
+            </div>
+            <div class="slide-number">32</div>
+        </div>
+
+        <!-- SLIDE 33: Guided Notes -->
+        <div class="slide">
+            <div class="time-badge">1:55-2:10 (15 min)</div>
+            <h1>Water Cycle Guided Notes</h1>
+            <h3>Teach Each Stage with Slides:</h3>
+            <div class="teacher-moves">
+                <strong>1. EVAPORATION:</strong> Water turns from liquid to gas (water vapor). The Sun heats water.<br>
+                <strong>Gesture:</strong> Hands rise up like steam<br><br>
+                <strong>2. CONDENSATION:</strong> Water vapor cools and turns back into liquid. Forms clouds.<br>
+                <strong>Gesture:</strong> Hands come together like forming a cloud<br><br>
+                <strong>3. PRECIPITATION:</strong> Water falls from clouds as rain, snow, sleet, or hail.<br>
+                <strong>Gesture:</strong> Fingers wiggle down like rain<br><br>
+                <strong>4. COLLECTION:</strong> Water collects in oceans, lakes, rivers, and groundwater.<br>
+                <strong>Gesture:</strong> Hands cup together like holding water
+            </div>
+            <div class="slide-number">33</div>
+        </div>
+
+        <!-- SLIDE 34: Social Studies Intro -->
+        <div class="slide">
+            <div class="time-badge">2:10-2:40 (30 min)</div>
+            <h1>Social Studies: What is a Continent?</h1>
+            <div class="objective">
+                <strong>Standard:</strong> 3.06<br>
+                <strong>I Can:</strong> I can identify and locate the 7 continents on a world map.
+            </div>
+            <h3>Essential Question:</h3>
+            <div class="objective">
+                What physical features make up Earth, and where are they located?
+            </div>
+            <div class="materials">
+                <strong>Materials:</strong> Globe, world maps (one per student), Gallopade p. 33, projector
+            </div>
+            <div class="slide-number">34</div>
+        </div>
+
+        <!-- SLIDE 35: Activate Prior Knowledge -->
+        <div class="slide">
+            <div class="time-badge">2:10-2:15 (5 min)</div>
+            <h1>Activate Prior Knowledge</h1>
+            <div class="teacher-moves">
+                <strong>Ask students:</strong><br>
+                "Can you name any continents you know?"<br><br>
+                Chart responses on board<br><br>
+                <strong>Hold up globe:</strong><br>
+                "Who can come up and point to where we live - the United States?"<br><br>
+                Call on volunteer to locate U.S. on classroom globe
+            </div>
+            <div class="slide-number">35</div>
+        </div>
+
+        <!-- SLIDE 36: Concept Development -->
+        <div class="slide">
+            <div class="time-badge">2:15-2:25 (10 min)</div>
+            <h1>The 7 Continents</h1>
+            <div class="teacher-moves">
+                <strong>Model using Gallopade p. 33:</strong><br><br>
+                Think aloud ranking continents from largest to smallest:<br>
+                1. Asia<br>
+                2. Africa<br>
+                3. North America<br>
+                4. South America<br>
+                5. Antarctica<br>
+                6. Europe<br>
+                7. Australia<br><br>
+                <strong>Point out:</strong> Hemispheres (Northern/Southern) and the Equator
+            </div>
+            <div class="slide-number">36</div>
+        </div>
+
+        <!-- SLIDE 37: Guided Practice -->
+        <div class="slide">
+            <div class="time-badge">2:25-2:35 (10 min)</div>
+            <h1>Locate Continents on Maps</h1>
+            <div class="teacher-moves">
+                <strong>Use interactive globe or projector:</strong><br><br>
+                Point to each continent while students trace with fingers on their own maps<br><br>
+                <strong>For each continent, say:</strong><br>
+                • Name of continent<br>
+                • One interesting fact<br>
+                • Relative location (Northern or Southern Hemisphere)<br><br>
+                Students follow along, pointing on their maps
+            </div>
+            <div class="slide-number">37</div>
+        </div>
+
+        <!-- SLIDE 38: Independent Practice -->
+        <div class="slide">
+            <div class="time-badge">2:35-2:40 (5 min)</div>
+            <h1>You Do: Complete Gallopade p. 33</h1>
+            <div class="teacher-moves">
+                <strong>Students independently:</strong><br>
+                • List the 7 continents by size (largest to smallest)<br>
+                • Label continents on their map if time allows<br><br>
+                <strong>Teacher circulates:</strong> Check for accuracy, provide support
+            </div>
+            <div class="closure-box">
+                <strong>Quick Check:</strong> "Point to the continent where we live. Which continent is the largest?"
+            </div>
+            <div class="slide-number">38</div>
+        </div>
+
+        <!-- SLIDE 39: Daily Closure -->
+        <div class="slide">
+            <div class="time-badge">2:40-2:50 (10 min)</div>
+            <h1>Daily Closure</h1>
+            <h3>Review All Three Subjects:</h3>
+            <div class="teacher-moves">
+                <strong>Math:</strong> "Share one tape diagram strategy with your partner"<br>
+                Call on 1 student to share with class<br><br>
+                <strong>Science:</strong> "What are the 4 stages of the water cycle?"<br>
+                Students do gestures while saying: evaporation, condensation, precipitation, collection<br><br>
+                <strong>Social Studies:</strong> "Which continent is the largest? Which continent do we live on?"<br><br>
+                <strong>Preview Monday:</strong> "Next week we'll learn about oceans, continue our narratives, and measure capacity!"
+            </div>
+            <div class="slide-number">39</div>
+        </div>
+
+        <!-- SLIDE 40: Pack Up -->
+        <div class="slide section-slide">
+            <h1>GREAT JOB TODAY! 🎉</h1>
+            <h2>Pack up and line up for dismissal</h2>
+            <p style="margin-top: 40px; font-size: 28px;">Have a wonderful weekend!</p>
+            <div class="slide-number">40</div>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <button id="prevBtn" onclick="changeSlide(-1)">← Previous</button>
+        <button id="nextBtn" onclick="changeSlide(1)">Next →</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+            
+            // Update button states
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.disabled = currentSlide === slides.length - 1;
+        }
+
+        function changeSlide(direction) {
+            showSlide(currentSlide + direction);
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft' && currentSlide > 0) {
+                changeSlide(-1);
+            } else if (e.key === 'ArrowRight' && currentSlide < slides.length - 1) {
+                changeSlide(1);
+            }
+        });
+
+        // Initialize
+        showSlide(0);
+    </script>
+</body>
+</html>
